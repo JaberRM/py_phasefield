@@ -1,3 +1,4 @@
-# Allen-Cahn non-conservative phase-field model 
+# minimal python phase-field examples 
 
-This is a simple Allen-Cahn phase-field solver 
+This is a simple Allen-Cahn (non-conservative) and 
+Cahn-Hiliard (conservative|) phase-field models 
