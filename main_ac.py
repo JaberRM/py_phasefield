@@ -14,22 +14,9 @@ def calc_del2(phi):
     return (phi_fx + phi_fy + phi_bx + phi_by - 4 * phi) / (dx * dy)
 
 
-def calc_grad2(phi):
-    # Laplacian of a 2D data with finite difference (periodic BC)
-    dx = 1
-    dy = 1
-    gamma = 1.0e3
-    phi_fx = np.roll(phi, 1, axis=0)
-    phi_bx = np.roll(phi, -1, axis=0)
-    phi_fy = np.roll(phi, 1, axis=1)
-    phi_by = np.roll(phi, -1, axis=1)
-    return 0.5 * gamma * np.mean(np.power((phi_fx + phi_bx - 2 * phi) / (2 * dx), 2) +
-                                 np.power((phi_fy + phi_by - 2 * phi) / (2 * dy), 2))
-
-
 def calc_dfdphi(phi, temperature):
     # Derivative of the Gibbs energy with respect to the order parameter
-    # Temperature in range of 1000 to 100
+    # Temperature in range of 100 to 1000
     G1 = 1 * (temperature / 1000)
     G2 = 1 - G1
     c = 50
